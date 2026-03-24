@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Peetz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #FF7A00;
+      --orange-light: #FFF3E8;
+      --dark:         #1A1A1A;
+      --gray:         #6B6B6B;
+      --border:       #EBEBEB;
+      --bg:           #FAFAF8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .logo-paw {
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--dark);
+    }
+    .header-tag {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--gray);
+      background: var(--orange-light);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--orange-light) 0%, #fff 60%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .updated-badge span { color: var(--orange); font-weight: 600; }
+
+    /* ── Content ── */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc a {
+      color: var(--orange);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Section */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 90px;
+    }
+    .section-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    p { font-size: 15px; color: #444; margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      font-size: 15px;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .highlight-box {
+      background: var(--orange-light);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+    }
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .contact-card p { color: var(--gray); font-size: 14px; }
+    .contact-link {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--orange);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 13px;
+      color: #AAA;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-paw">🐾</div>
+      <span class="logo-name">Peetz</span>
+    </a>
+    <span class="header-tag">Privacy Policy</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>La tua privacy,<br>la nostra priorità</h1>
+  <p class="hero-sub">Leggi come raccogliamo, usiamo e proteggiamo i tuoi dati personali all'interno dell'app Peetz.</p>
+  <div class="updated-badge">Ultimo aggiornamento: <span>Marzo 2025</span></div>
+</div>
+
+<div class="content">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Indice</div>
+    <ol>
+      <li><a href="#raccolta">Dati che raccogliamo</a></li>
+      <li><a href="#utilizzo">Come utilizziamo i dati</a></li>
+      <li><a href="#condivisione">Condivisione con terze parti</a></li>
+      <li><a href="#archiviazione">Archiviazione e sicurezza</a></li>
+      <li><a href="#diritti">I tuoi diritti</a></li>
+      <li><a href="#minori">Minori</a></li>
+      <li><a href="#modifiche">Modifiche alla policy</a></li>
+      <li><a href="#contatti">Contattaci</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="raccolta">
+    <div class="section-number">01</div>
+    <h2>Dati che raccogliamo</h2>
+    <p>Quando utilizzi Peetz raccogliamo le seguenti informazioni:</p>
+    <ul>
+      <li><strong>Dati di registrazione:</strong> indirizzo email e password (cifrata) forniti durante la creazione dell'account.</li>
+      <li><strong>Profilo animale:</strong> nome, razza, età, foto e bio del tuo animale domestico.</li>
+      <li><strong>Tag e preferenze:</strong> le caratteristiche e abitudini che selezioni per il tuo animale.</li>
+      <li><strong>Posizione approssimativa:</strong> per mostrare animali vicino a te nella mappa Cerca. Non registriamo tracce di posizione continue.</li>
+      <li><strong>Dati di utilizzo:</strong> interazioni anonimizzate per migliorare l'esperienza (crash report, sessioni).</li>
+    </ul>
+    <div class="highlight-box">
+      Non raccogliamo dati sensibili come documenti d'identità, dati bancari o informazioni sulla salute degli utenti.
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 2 -->
+  <div class="section" id="utilizzo">
+    <div class="section-number">02</div>
+    <h2>Come utilizziamo i dati</h2>
+    <p>I dati raccolti vengono usati esclusivamente per:</p>
+    <ul>
+      <li>Fornire e migliorare le funzionalità dell'app (Cerca, Chat, Profilo).</li>
+      <li>Mostrare il tuo animale agli altri utenti nella mappa e nella lista Cerca.</li>
+      <li>Inviare notifiche push relative a nuovi messaggi o attività (se abilitato).</li>
+      <li>Garantire la sicurezza della piattaforma e gestire segnalazioni di abuso.</li>
+    </ul>
+    <p><strong>Non vendiamo mai i tuoi dati a terze parti</strong> né li usiamo per pubblicità personalizzata.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 3 -->
+  <div class="section" id="condivisione">
+    <div class="section-number">03</div>
+    <h2>Condivisione con terze parti</h2>
+    <p>Peetz utilizza i seguenti servizi di terze parti per il suo funzionamento:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> (Firestore, Storage, Auth) — archiviazione dati e autenticazione. Privacy Policy: <a href="https://firebase.google.com/support/privacy" style="color:var(--orange)">firebase.google.com</a></li>
+      <li><strong>Apple / Google</strong> — notifiche push (APNs / FCM). Nessun dato personale viene trasmesso oltre al token di notifica.</li>
+      <li><strong>Expo</strong> — framework di sviluppo. Non raccoglie dati degli utenti finali.</li>
+    </ul>
+    <p>Nessun'altra terza parte ha accesso ai tuoi dati personali.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 4 -->
+  <div class="section" id="archiviazione">
+    <div class="section-number">04</div>
+    <h2>Archiviazione e sicurezza</h2>
+    <p>I dati sono archiviati su server Google Firebase con sede nell'Unione Europea (region <code>europe-west</code>). Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati da accessi non autorizzati, alterazioni o divulgazioni.</p>
+    <p>Le password non vengono mai memorizzate in chiaro: Firebase Auth gestisce l'autenticazione con hashing sicuro.</p>
+    <p>I dati vengono conservati finché il tuo account è attivo. Eliminando l'account, tutti i tuoi dati vengono rimossi entro 30 giorni.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 5 -->
+  <div class="section" id="diritti">
+    <div class="section-number">05</div>
+    <h2>I tuoi diritti (GDPR)</h2>
+    <p>In quanto utente nell'Unione Europea, hai diritto a:</p>
+    <ul>
+      <li><strong>Accesso:</strong> richiedere una copia dei tuoi dati personali.</li>
+      <li><strong>Rettifica:</strong> correggere dati inesatti direttamente dal profilo app.</li>
+      <li><strong>Cancellazione:</strong> eliminare il tuo account e tutti i dati dalla sezione Impostazioni → Elimina account.</li>
+      <li><strong>Portabilità:</strong> richiedere i tuoi dati in formato leggibile.</li>
+      <li><strong>Opposizione:</strong> opporti al trattamento dei tuoi dati scrivendo a <a href="mailto:privacy@peetz.app" style="color:var(--orange)">privacy@peetz.app</a>.</li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 6 -->
+  <div class="section" id="minori">
+    <div class="section-number">06</div>
+    <h2>Minori</h2>
+    <p>Peetz è destinato a utenti di almeno <strong>13 anni</strong>. Non raccogliamo consapevolmente dati di minori di 13 anni. Se vieni a conoscenza di un account appartenente a un minore, contattaci immediatamente.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 7 -->
+  <div class="section" id="modifiche">
+    <div class="section-number">07</div>
+    <h2>Modifiche alla policy</h2>
+    <p>Ci riserviamo il diritto di aggiornare questa Privacy Policy. In caso di modifiche sostanziali, ti avviseremo tramite notifica in-app o email prima che le modifiche entrino in vigore.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 8 -->
+  <div class="section" id="contatti">
+    <div class="section-number">08</div>
+    <h2>Contattaci</h2>
+    <div class="contact-card">
+      <h3>Hai domande sulla privacy?</h3>
+      <p>Il nostro team è disponibile a rispondere a qualsiasi tua domanda riguardo al trattamento dei tuoi dati personali.</p>
+      <a class="contact-link" href="mailto:privacy@peetz.app">📧 privacy@peetz.app</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Peetz · <a href="termini-servizio.html">Termini di servizio</a> · <a href="#">Torna all'app</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termini di Servizio — Peetz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #FF7A00;
+      --orange-light: #FFF3E8;
+      --dark:         #1A1A1A;
+      --gray:         #6B6B6B;
+      --border:       #EBEBEB;
+      --bg:           #FAFAF8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-paw {
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-size: 18px;
+    }
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: var(--dark);
+    }
+    .header-tag {
+      margin-left: auto;
+      font-size: 12px; color: var(--gray);
+      background: var(--orange-light);
+      padding: 4px 10px; border-radius: 20px; font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #F0F4FF 0%, #fff 60%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--dark); line-height: 1.2; margin-bottom: 16px;
+    }
+    .hero-sub { font-size: 16px; color: var(--gray); max-width: 480px; margin: 0 auto 24px; }
+    .updated-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 13px; color: var(--gray);
+    }
+    .updated-badge span { color: var(--orange); font-weight: 600; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .toc {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 28px; margin-bottom: 48px;
+    }
+    .toc-title {
+      font-size: 13px; font-weight: 600; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px;
+    }
+    .toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+    .toc a { color: var(--orange); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+
+    .section { margin-bottom: 48px; scroll-margin-top: 90px; }
+    .section-number {
+      font-size: 12px; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px; color: var(--dark); margin-bottom: 16px; line-height: 1.3;
+    }
+    p { font-size: 15px; color: #444; margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol {
+      padding-left: 20px; font-size: 15px; color: #444;
+      display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;
+    }
+
+    .highlight-box {
+      background: var(--orange-light);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px; margin: 20px 0;
+      font-size: 14px; color: #555;
+    }
+    .warning-box {
+      background: #FFF5F5;
+      border-left: 3px solid #FF3B30;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px; margin: 20px 0;
+      font-size: 14px; color: #555;
+    }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    .contact-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px; text-align: center;
+    }
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 10px;
+    }
+    .contact-card p { color: var(--gray); font-size: 14px; }
+    .contact-link {
+      display: inline-block; margin-top: 16px;
+      background: var(--orange); color: #fff;
+      padding: 12px 28px; border-radius: 12px;
+      text-decoration: none; font-weight: 600; font-size: 15px;
+    }
+
+    footer {
+      text-align: center; padding: 32px;
+      font-size: 13px; color: #AAA;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-paw">🐾</div>
+      <span class="logo-name">Peetz</span>
+    </a>
+    <span class="header-tag">Termini di Servizio</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Termini di<br>Servizio</h1>
+  <p class="hero-sub">Utilizzando Peetz accetti i seguenti termini. Ti invitiamo a leggerli attentamente.</p>
+  <div class="updated-badge">Ultimo aggiornamento: <span>Marzo 2025</span></div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Indice</div>
+    <ol>
+      <li><a href="#accettazione">Accettazione dei termini</a></li>
+      <li><a href="#descrizione">Descrizione del servizio</a></li>
+      <li><a href="#account">Creazione account</a></li>
+      <li><a href="#comportamento">Comportamento degli utenti</a></li>
+      <li><a href="#contenuti">Contenuti pubblicati</a></li>
+      <li><a href="#premium">Funzionalità Premium</a></li>
+      <li><a href="#limitazioni">Limitazioni di responsabilità</a></li>
+      <li><a href="#sospensione">Sospensione e cancellazione</a></li>
+      <li><a href="#legge">Legge applicabile</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="accettazione">
+    <div class="section-number">01</div>
+    <h2>Accettazione dei termini</h2>
+    <p>Accedendo o utilizzando l'applicazione Peetz ("l'App"), dichiari di aver letto, compreso e accettato i presenti Termini di Servizio. Se non accetti questi termini, ti preghiamo di non utilizzare l'App.</p>
+    <p>L'utilizzo continuato dell'App dopo eventuali modifiche ai Termini costituisce accettazione delle modifiche stesse.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 2 -->
+  <div class="section" id="descrizione">
+    <div class="section-number">02</div>
+    <h2>Descrizione del servizio</h2>
+    <p>Peetz è una piattaforma social per proprietari di animali domestici che consente di:</p>
+    <ul>
+      <li>Creare un profilo per il proprio animale domestico.</li>
+      <li>Scoprire altri animali nelle vicinanze tramite mappa e lista.</li>
+      <li>Comunicare con altri proprietari tramite chat in-app.</li>
+      <li>Salvare profili preferiti e gestire la propria rete.</li>
+    </ul>
+    <p>Peetz si riserva il diritto di modificare, sospendere o interrompere funzionalità del servizio in qualsiasi momento, con o senza preavviso.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 3 -->
+  <div class="section" id="account">
+    <div class="section-number">03</div>
+    <h2>Creazione account</h2>
+    <p>Per utilizzare Peetz è necessario creare un account fornendo un indirizzo email valido e una password sicura. Sei responsabile di:</p>
+    <ul>
+      <li>Mantenere riservate le credenziali di accesso.</li>
+      <li>Tutte le attività eseguite con il tuo account.</li>
+      <li>Notificarci immediatamente in caso di accesso non autorizzato.</li>
+    </ul>
+    <div class="highlight-box">
+      È consentito un solo account per persona. La creazione di account multipli o falsi è vietata e può comportare la sospensione permanente.
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 4 -->
+  <div class="section" id="comportamento">
+    <div class="section-number">04</div>
+    <h2>Comportamento degli utenti</h2>
+    <p>Utilizzando Peetz ti impegni a non:</p>
+    <ul>
+      <li>Pubblicare contenuti offensivi, violenti, sessualmente espliciti o illegali.</li>
+      <li>Molestare, minacciare o intimidire altri utenti.</li>
+      <li>Impersonare altre persone o creare profili falsi.</li>
+      <li>Utilizzare l'App per fini commerciali non autorizzati o spam.</li>
+      <li>Tentare di accedere a dati di altri utenti o compromettere la sicurezza della piattaforma.</li>
+      <li>Pubblicare informazioni false sul proprio animale domestico.</li>
+    </ul>
+    <div class="warning-box">
+      Le violazioni di queste regole possono comportare la sospensione immediata e permanente dell'account, senza rimborso di eventuali abbonamenti attivi.
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 5 -->
+  <div class="section" id="contenuti">
+    <div class="section-number">05</div>
+    <h2>Contenuti pubblicati</h2>
+    <p>Rimani proprietario dei contenuti che carichi su Peetz (foto, testi, informazioni sull'animale). Caricando contenuti, concedi a Peetz una licenza non esclusiva, gratuita e mondiale per visualizzare tali contenuti all'interno dell'App.</p>
+    <p>Sei l'unico responsabile dei contenuti che pubblichi. Peetz non è responsabile per contenuti pubblicati da terzi.</p>
+    <p>Ci riserviamo il diritto di rimuovere qualsiasi contenuto che violi questi Termini o che riteniamo inappropriato, a nostra esclusiva discrezione.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 6 -->
+  <div class="section" id="premium">
+    <div class="section-number">06</div>
+    <h2>Funzionalità Premium</h2>
+    <p>Peetz offre funzionalità aggiuntive tramite abbonamento Premium. I pagamenti sono gestiti da Apple App Store o Google Play Store secondo le rispettive politiche.</p>
+    <ul>
+      <li>Gli abbonamenti si rinnovano automaticamente salvo cancellazione prima del rinnovo.</li>
+      <li>I rimborsi sono soggetti alle politiche di Apple / Google.</li>
+      <li>Le funzionalità Premium possono variare nel tempo.</li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 7 -->
+  <div class="section" id="limitazioni">
+    <div class="section-number">07</div>
+    <h2>Limitazioni di responsabilità</h2>
+    <p>Peetz è fornito "così com'è" senza garanzie di alcun tipo. Non garantiamo che il servizio sia ininterrotto, privo di errori o completamente sicuro.</p>
+    <p>Peetz non è responsabile per:</p>
+    <ul>
+      <li>Danni derivanti dall'utilizzo o dall'impossibilità di utilizzo dell'App.</li>
+      <li>Comportamenti di altri utenti all'interno o all'esterno della piattaforma.</li>
+      <li>Perdita di dati causata da eventi al di fuori del nostro controllo.</li>
+      <li>Incontri fisici tra utenti organizzati tramite l'App — ogni interazione avviene a rischio dell'utente.</li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 8 -->
+  <div class="section" id="sospensione">
+    <div class="section-number">08</div>
+    <h2>Sospensione e cancellazione</h2>
+    <p>Puoi cancellare il tuo account in qualsiasi momento dalla sezione Impostazioni → Elimina account.</p>
+    <p>Peetz si riserva il diritto di sospendere o terminare il tuo account in caso di:</p>
+    <ul>
+      <li>Violazione dei presenti Termini di Servizio.</li>
+      <li>Comportamenti che danneggiano altri utenti o la piattaforma.</li>
+      <li>Inattività prolungata dell'account (oltre 24 mesi).</li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 9 -->
+  <div class="section" id="legge">
+    <div class="section-number">09</div>
+    <h2>Legge applicabile</h2>
+    <p>I presenti Termini sono regolati dalla legge italiana e dal diritto dell'Unione Europea. Per qualsiasi controversia è competente il Tribunale di Napoli, salvo diversa disposizione di legge a tutela del consumatore.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 10 -->
+  <div class="section" id="contatti">
+    <div class="section-number">10</div>
+    <h2>Contatti</h2>
+    <div class="contact-card">
+      <h3>Domande sui Termini?</h3>
+      <p>Se hai domande sui presenti Termini di Servizio o hai bisogno di assistenza, scrivici.</p>
+      <a class="contact-link" href="mailto:support@peetz.app">📧 support@peetz.app</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Peetz · <a href="privacy-policy.html">Privacy Policy</a> · <a href="#">Torna all'app</a>
+</footer>
+
+</body>
+</html>
